@@ -1,0 +1,15 @@
+1. Explain the code in each of the lines 3177 and 3178.
+3177 r->next = kmem.freelist;
+3178 kmem.freelist = r;
+
+it is removing the first element from r
+
+2. Consider the following sequence of statements executed in walkpgdir function. Explain what each
+line in this code is trying to do and how it achieves it.
+1740 pde = &pgdir[PDX(va)];
+1742 pgtab = (pte_t*)p2v(PTE_ADDR(*pde));
+1753 return &pgtab[PTX(va)];
+
+pde is equal to address of the table entry PDX(va)
+pgtab is equal to the virtual address of pde
+it is returing the pte table
